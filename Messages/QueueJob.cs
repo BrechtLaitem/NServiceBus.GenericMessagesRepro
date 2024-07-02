@@ -1,6 +1,6 @@
 namespace Messages;
 
-public class QueueJob<T> : IMessage
+public abstract class QueueJob<TJobParams> : IMessage where TJobParams : IJobParameters
 {
-    public T Data { get; set; }
+    public TJobParams Parameters { get; set; } = default!;
 }

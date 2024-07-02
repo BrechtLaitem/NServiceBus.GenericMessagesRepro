@@ -1,6 +1,8 @@
 ﻿namespace Messages;
 
-public class TriggerProcessorJobParams
+public sealed class TriggerProcessorJobParams : IJobParameters
 {
-    public string Content { get; set; }
+    public int ProcessorId { get; set; }
+
+    public string GetDashboardDescription() => $"Trigger processor '{ProcessorId}'";
 }

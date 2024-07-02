@@ -2,12 +2,12 @@ using Messages;
 
 namespace Receiver;
 
-public class MyMessageHandler : BaseHandler<TriggerProcessorJobParams>
+public sealed class MyMessageHandler : BaseHandler<DummyJob, TriggerProcessorJobParams>
 {
     public override async Task Handle(QueueJob<TriggerProcessorJobParams> message, IMessageHandlerContext context)
     {
         await base.Handle(message, context);
         
-        Console.WriteLine($"MyMessage Received message: {message.Data.Content}");
+        Console.WriteLine($"MyMessage Received message: Processor ID => {message.Parameters.ProcessorId}");
     }
 }

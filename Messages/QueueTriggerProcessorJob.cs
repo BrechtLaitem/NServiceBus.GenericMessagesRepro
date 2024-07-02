@@ -1,3 +1,3 @@
 namespace Messages;
 
-public class QueueTriggerProcessorJob : QueueJob<TriggerProcessorJobParams>;
+public sealed class QueueTriggerProcessorJob : QueueJob<TriggerProcessorJobParams>;
